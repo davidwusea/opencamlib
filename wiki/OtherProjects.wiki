@@ -1,6 +1,6 @@
 #summary A list of other open-source CAM projects.
 
-
+  * list of CAM-programs on the EMC2 wiki: http://wiki.linuxcnc.org/cgi-bin/emcinfo.pl?Cam
   * cam-occ http://code.google.com/p/cam-occ/
    * C++, OpenCascade
   * GCAM http://gcam.js.cx
