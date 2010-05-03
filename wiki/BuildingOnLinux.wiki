@@ -11,6 +11,7 @@ The minimal set of software needed to build the OpenCamLib Python module on Linu
   * cmake
   * libboost-python-dev
   * python-dev
+  * OpenMP
 
 If you want to also build the documentation, install these additional packages:
   * doxygen
@@ -37,6 +38,12 @@ make ocl
 Or just this, to build the docs too:
 {{{
 make
+}}}
+
+== Installing ==
+If you want to install ocl.so and camvtk.py (the VTK visualization helper library) so that they are available for any python script to use, then run:
+{{{
+sudo make install
 }}}
 
 That's it!  Have fun!
