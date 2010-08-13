@@ -30,6 +30,18 @@ See also the BookList
   * summary: z-slice algorithm for creating waterline paths
 
 = Cutting Simulation =
+A z-map is an array of vectors in the z-direction which are cut to length by the moving cutter. Vertical walls are difficult to represent, and undercuts are impossible to simulate.
+
+An octree is an adaptive space division. The marching-cubes algorithm can be used to produce trianges from the octree if a distance-value is stored at each octree vertex.
+
+== Octree based methods ==
+ * Hong-Tzong Yau and Lee-Sen Tsou, "Efficient NC Simulation for Multi-Axis Solid Machining With a Universal APT Cutter" http://dx.doi.org/10.1115/1.3130231
+ * Hong T. Yau ,  Lee S. Tsou ,  Yu C. Tong , "Adaptive NC Simulation for Multi-axis Solid Machining "
+   ** pdf link: http://www.cadanda.com/V2Nos1to4_11.pdf
+ * Karunakaran
+   ** DOI 10.1007/s00170-009-2107-7
+
+== Z-map based methods ==
  * Maeng et al. (2003) "A Z-map update method for linearly moving tools" Computer-Aided Design 35 (2003) 995–1009
   * link doi:10.1016/S0010-4485(02)00161-6
   * summary: math+algorithm for updating a z-map model when a toroidal tool is moved with linear moves
