@@ -2,7 +2,7 @@
 
 = Introduction =
 
-This page will list academic papers related to CAM. Please add any papers you have to this list. The papers are usually available by email if you ask kindly on the monocam list.
+This page will list academic papers related to CAM. Please add any papers you have to this list. The pdf papers are usually available by email if you ask kindly on the mailing-list.
 
 Papers should be organized roughly by category below. It doesn't make sense to list the whole abstract here, it's usually available free on the web, but do provide some comments on what the paper contains or the main ideas.
 
@@ -24,7 +24,7 @@ See also the BookList
   * link: http://dx.doi.org/10.1007/PL00003965
   * summary: meshing of point-cloud data, drop-cutter math for toroidal endmills
 
-= Z-slice =
+= Z-slice or Waterline =
  * Chuang, Yau (2005) "A new approach to z-level contour machining of triangulated surface models using fillet endmills", Computer-Aided Design 37 (2005) 1039–1051
   * link  doi:10.1016/j.cad.2004.10.005
   * summary: z-slice algorithm for creating waterline paths
@@ -34,7 +34,6 @@ See also the BookList
   * link doi:10.1016/S0010-4485(02)00161-6
   * summary: math+algorithm for updating a z-map model when a toroidal tool is moved with linear moves
  * Maeng et al. (2004) "A fast NC simulation method for circularly moving tools in the Z-map environment", IEEE Proceedings of the Geometric Modeling and Processing 2004 (GMP’04)
-  * link ?
   * summary: z-map update algorithm for circular/arc moves
  * Lee et al. 2002 : “Development of simulation system for machining process using enhanced Z-map model”
   * doi:10.1016/S0924-0136(02)00761-6
@@ -52,7 +51,6 @@ See also the BookList
  * Liu et al "An offset algorithm for polyline curves" Computers in Industry (2007)
   * http://dx.doi.org/10.1016/j.compind.2006.06.002
  * Hansen and Arbab "An algorithm for generating NC tool paths for arbitrary shaped pockets with islands" ACM transactions on graphics (1992)
-  * link ?
   * a classic paper which many others reference
  * Lai, Faddis, Sorem, "Incremental algorithms for ®nding the offset distance and minimum passage width in a pocket machining toolpath using the Voronoi technique", J Materials processing technology 100 (2000) 
   * http://dx.doi.org/10.1016/S0924-0136(99)00425-2
