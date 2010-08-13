@@ -1,39 +1,36 @@
 #summary To-Do list for CAM algorithms.
 
 If you're interested in CAM algorithms and would like to help with this project, here is a list of algorithms and ideas that need implementing!
+Please join us on the discussion list to explore what we do and where you can help: http://groups.google.com/group/opencamlib
+
+Most of the things below are not implemented on ocl yet!
 
 = 1D algorithms =
-These are basically drilling tool paths.
- * Travelling salesman problem (TSP) solver
-
+Think of these as drilling tool paths.
+ * Travelling salesman problem (TSP) solver. The boost graph-library contains some heuristic solution to this problem.
   * Genetic algorithm based?
   * simulated annealing based?
  * modified TSP: asymmetric graph. This could be used as a general algorithm for optimizing 2D paths. You come into a 'city' at the beginning of a cut and exit the 'city' after the cut (at another point in space). Or maybe you could implement this cutting idea with two cities per cut. As you enter the first city there is a zero-cost edge in the graph which you must travel along.
 
 = 2D algorithms =
- * Line segment offset
- * Line/Arc segment offset
- * Line-filter (aka Douglass-Peuckert)
+ * Line segment offset (a subset of the existing 3D waterline code)
+ * Line/Arc segment offset (an exact voronoi-approach is low priority, use approximate fiber/weave approach instead)
  * Arc-filter (find arcs with given tolerance from short line segments)
 
-== 2D clearing algorithms ==
+== 2D pocket/clearing algorithms ==
 once we have a pocket or contour (from the offset algorithm) we need to clear(rough) it.
- * zigzag
+ * zigzag (use a graph-based approach)
  * spiral
  * successive offset
  * adaptive (lot's of ideas to be added later on a separate page AdaptiveRoughing)
 
 = 3D algorithms =
- * Drop-Cutter (work in progress)
+ * Drop-Cutter 
   ** sample rate calculation needed
- * kd-tree search for triangles under the cutter
- * Push-cutter
- * STL surface z-slice
- * STL surface outline ('shadow' of STL surface on XY-plane).
-  * possibly a combination of two algorithms: split the triangulation into convex parts. calculate the convex hull of the parts. (?) but how do we find the overall outline (?)
- * Waterline finishing (a combination of z-slice and push-cutter)
+ * Push-cutter/Waterline
+  ** only CylCutter works now, work needed on Ball, Bull, Cone
 
 = Multi-threading + Benchmarking =
-To take advantage of multi-core processors as much as possible of the algorithms should be multi-threaded.
+To take advantage of multi-core processors as much as possible of the algorithms should be multi-threaded. We are now using OpenMP, but if someone is keen on MPI or even OpenCL, then those are interesting directions too!
 
-A set of standard benchmarking tests + timing mechanisms will be useful for measuring improvements in algorithm speed.
+A set of standard benchmarking tests + timing mechanisms would be useful for measuring improvements in algorithm speed.
