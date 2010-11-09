@@ -3,8 +3,6 @@
 If you're interested in CAM algorithms and would like to help with this project, here is a list of algorithms and ideas that need implementing!
 Please join us on the discussion list to explore what we do and where you can help: http://groups.google.com/group/opencamlib
 
-Most of the things below are not implemented on ocl yet!
-
 = 1D algorithms =
 Think of these as drilling tool paths.
  * Travelling salesman problem (TSP) solver. The boost graph-library contains some heuristic solution to this problem.
@@ -14,7 +12,7 @@ Think of these as drilling tool paths.
 
 = 2D algorithms =
  * Line segment offset (a subset of the existing 3D waterline code)
- * Line/Arc segment offset (an exact voronoi-approach is low priority, use approximate fiber/weave approach instead)
+ * Line/Arc segment offset (an exact voronoi-approach is on possibility, an approximate fiber/weave approach is the other)
  * Arc-filter (find arcs with given tolerance from short line segments)
 
 == 2D pocket/clearing algorithms ==
@@ -26,11 +24,19 @@ once we have a pocket or contour (from the offset algorithm) we need to clear(ro
 
 = 3D algorithms =
  * Drop-Cutter 
-  ** sample rate calculation needed
+  ** Cyl, Ball, Bull, Cone cutters work. Composite cutters work. 
  * Push-cutter/Waterline
-  ** only CylCutter works now, work needed on Ball, Bull, Cone
+  ** work needed on ConeCutter
+
+= Cutting simulation =
+ * To get better performance, integrate with OpenGL and use VBO-technique for rendering. 
+ * Add all the cutter types. 
+ * Color triangles based on what cutter is used. 
+ * display/log material removal rate (verify that an adaptive pocketing algorithm actually works)
+ * fixtures and other no-go areas
+ * integrate with a g-code parser (EMC2 ?)
 
 = Multi-threading + Benchmarking =
-To take advantage of multi-core processors as much as possible of the algorithms should be multi-threaded. We are now using OpenMP, but if someone is keen on MPI or even OpenCL, then those are interesting directions too!
+We are now using OpenMP, but if someone is keen on MPI or OpenCL, then those are interesting directions too!
 
-A set of standard benchmarking tests + timing mechanisms would be useful for measuring improvements in algorithm speed.
+A set of standard benchmarking tests + timing mechanisms would be useful for measuring improvements in algorithm speed. Compare benchmarks to other libraries (PyCAM etc)
