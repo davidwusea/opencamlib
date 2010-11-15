@@ -1,13 +1,64 @@
-#summary One-sentence summary of this page.
-
-= Introduction =
-
-Add your content here.
+#summary Notes on algorithms for computing voronoi diagrams.
 
 
-= Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+= Papers =
+
+ * Sugihara and Iri, (1992) "construction of the voronoi diagram for one million generators in single-precision arithmetic"
+ * Sugihara, Iri, Inagaki, Imai, (2000) "topology oriented implementation - an approach to robust geometric algorithms"
+ * Held, (2001) "VRONI: an engineering approach to the reliable and efficient computation of Voronoi diagrams of points and line segments"
+
+
+
+= Algorithm =
+
+
+
+The Sugihara&Iri paper from 1992 describes the basic topology-based approach for Voronoi diagrams of points.
+
+
+
+Incremental algorithm for generating the VD G(l) when adding new vertex pl from the previous VD G(l-1)
+
+ * *A1* select a subset T of vertices in G(l-1)
+ * *A2* for every edge connecting a vertex in T to a vertex not in T, generate a new vertex on it (at the mid-point?)
+ * *A3* Generate new edges connecting the new vertices (A2) so that the new edges form a cycle that encloses vertices T (and no other vertices)
+ * *A4* remove vertices T and edges incident on them (the interior of the cycle is R(pl)
+
+The set T fulfils:
+ * *C1* T is nonempty
+ * *C2* the sub-graph G(l-1, T) is a tree
+ * *C3* for a primary cycle C C-intersection-G(l-1) is connected
+
+To find the set T:
+
+ * *B1* find the generator pi that is closest to pl and among the voronoi-points Qijk on the boundary of the voronoi region R(pi) find the one with the smallest H(pi,pj,pk,pl). Add this voronoi point to T
+ * *B2* repeat until no more points can be added to T:
+   ** *B2.1* for each Qijk connected to by a voronoi-edge to T, add Qijk to T if H<0 and if the resulting T satisfies C2 and C3
+
+= the in-circle predicate =
+
+Qijk is inside the new voronoi region R(pl) if Qijk is inside the circumscribed circle of pi, pj, pk.
+
+This is true when the determinant H(pi,pj,pk,pl) < 0
+
+
+
+= the VD graph =
+
+start with G(3) which has three vertices "far" away from the vertices to be added.
+
+The initial VD has three edges towards the center (0,0) and three circular segments at 'infinity'.
+
+
+
+ * voronoi-point state: "in" "out" "undecided"
+  ** "in" points are in T
+  ** "out" points are not in T
+ * voronoi-region state: "incident" "nonincident"
+  ** incident regions have a boundary whose vertex is in T 
+
+T is a tree if
+ * *C4* Qijk is not adjacent to two or more "in" voronoi points
+T is connected if
+ * *C5* for any "incident" voronoi region having Qijk on its boundary, Qijk is adjacent to an "in" voronoi point on this boundary
