@@ -4,9 +4,10 @@
 
 = Papers =
 
- * Sugihara and Iri, (1992) "construction of the voronoi diagram for one million generators in single-precision arithmetic"
- * Sugihara, Iri, Inagaki, Imai, (2000) "topology oriented implementation - an approach to robust geometric algorithms"
- * Held, (2001) "VRONI: an engineering approach to the reliable and efficient computation of Voronoi diagrams of points and line segments"
+ * Sugihara and Iri, (1992) "construction of the voronoi diagram for one million generators in single-precision arithmetic" http://dx.doi.org/10.1109/5.163412
+ * Imai (1996) "A Topology-Oriented Algorithm for the Voronoi Diagram of Polygons" http://www.cccg.ca/proceedings/1996/cccg1996_0019.pdf
+ * Sugihara, Iri, Inagaki, Imai, (2000) "topology oriented implementation - an approach to robust geometric algorithms" http://dx.doi.org/10.1007/s004530010002
+ * Held, (2001) "VRONI: an engineering approach to the reliable and efficient computation of Voronoi diagrams of points and line segments" http://dx.doi.org/10.1016/S0925-7721(01)00003-7
 
 
 
