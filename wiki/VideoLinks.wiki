@@ -1,0 +1,11 @@
+#summary videos of other cam programs in use.
+
+For the UI and for toolpath types we should try to learn as much as possible from other CAM programs. This page should collect links to videos and pictures etc of other CAM programs.
+
+= MasterCAM =
+ * [http://www.mastercam.com/CamZone/VideoTestimonials/ Video testimonials]
+ * [http://www.cimco-hsm.com/index.php?page=download Cimco HSM]
+= SurfCAM =
+ * [http://www.surfware.com/default.asp?contentID=553 TrueMill videos]
+= OneCNC =
+ * [http://www.onecnc.net/videos/video_index.htm OneCNC videos]
