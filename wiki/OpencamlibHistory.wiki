@@ -1,0 +1,92 @@
+#summary A time-line of ocl development.
+
+== 2010 November ==
+
+Fixed a lot of memory leaks, see issue30.
+
+New experimental operation: Adaptive Waterline, see: http://www.anderswallin.net/2010/11/better-adaptive-waterline/
+     
+== 2010 October ==
+
+experimenting with adaptive sampling for drop-cutter: http://www.anderswallin.net/2010/10/adaptive-sampling-drop-cutter/
+
+more re-factoring and cleanup of both drop-cutter and push-cutter.
+
+Push cutter for BullCutter with the aligned offset-ellipse. (ConeCutter is still missing/ToDo). See: http://www.anderswallin.net/2010/10/waterline-with-bullcutter/
+
+== 2010 September ==
+
+re-factoring of drop-cutter and push-cutter methods to handle most work in the base-class and only encapsulate minimal variability in the sub-classes. Push-cutter for the toroid is still Todo (this requires an aligned offset-ellipse solver).
+
+Experimenting with a pure c++ shared library target (libocl.so). This does not require linking against boost-python.
+
+== 2010 August ==
+
+BallCutter now has the push-cutter methods, and can be used with Waterline. 
+
+some work on cutsim: http://www.youtube.com/watch?v=1DAvgLCj_RQ and http://www.anderswallin.net/2010/08/octree-with-marching-cubes/
+
+more progress on waterline toolpaths: http://www.anderswallin.net/2010/08/the-weave-point-order-problem/
+
+<img src="http://www.anderswallin.net/wp-content/uploads/2010/08/tux_waterlines-625x364.png">
+
+<img src="http://www.anderswallin.net/wp-content/uploads/2010/08/tux_offsets-509x625.png">
+
+== 2010 July ==
+
+First tests with producing Waterline paths: http://www.anderswallin.net/2010/07/waterline-toolpaths-part-2/  
+<img src="http://www.anderswallin.net/wp-content/uploads/2010/07/tux_waterlines-625x369.png" width=625></img>
+
+
+Experimenting with the octree-based cutting-simulation: http://www.youtube.com/watch?v=N7SU0l2b1j4 and http://www.youtube.com/watch?v=9sctWgd_5rs
+
+<img src="http://www.anderswallin.net/wp-content/uploads/2010/07/depth_10.png" width=625></img>
+
+
+The CLPoint class was introduced. This changes how the low level drop-cutter methods are called.
+
+A line-filter was added which detects collinear (to within tolerance) points in a list of CLPoints and removes the redundant ones. See blog post: http://www.anderswallin.net/2010/07/line-filter-for-opencamlib/
+
+== 2010 May ==
+
+STLSurf.getBounds() now returns the bounding-box values for an STL surface.
+
+ocl.revision() now returns the SVN revision
+
+cutter.offsetCutter(double d) method which returns a new cutter offset outward by the amount d. This is useful for creating semi-finish paths with a stock-to-leave value of d.
+
+Composite cutters that consist of two or more of the basic cutter shapes. See blog: http://www.anderswallin.net/2010/05/composite-cutters-for-ocl/
+
+ConeCutter added.
+
+== 2010 April ==
+
+Experimental BatchDropCutter now makes use of OpenMP for multi-threading.
+
+First test-code of octree cutting simulation: http://www.youtube.com/watch?v=38LdfiMTVw0
+
+First implementation of drop-cutter for Toroidal tools. http://www.youtube.com/watch?v=T0_lUYq2m-g
+
+Fixed some obvious bugs in drop-cutter for Cylindrical and Spherical tools.
+
+== 2010 March ==
+
+Preliminary octree for cutting simulation http://www.youtube.com/watch?v=38LdfiMTVw0
+
+Offset-ellipse solver for toroidal cutter edge-test http://www.youtube.com/watch?v=rD1h8S0lG7g
+
+DropCutter for Cylindrical and Spherical endmills now works.
+
+Seb and Dan join the project as committers!
+
+A "fixed" kd-tree search: http://www.youtube.com/watch?v=5eci8wSmeGM
+
+Another drop-cutter demonstration: http://vimeo.com/10215501   the kd-tree build or search function is broken somehow... video also here: http://www.youtube.com/watch?v=-0MPPY49Nwk
+
+Drop-cutter code with kd-tree search for triangles. http://vimeo.com/10215501
+
+== 2010 February ==
+
+Loading STL-files and visualizing them works. Basic drop-cutter algorithm for cylindrical tools.
+
+<img src="http://www.anderswallin.net/wp-content/uploads/2010/04/tux.png" width=640></img>
