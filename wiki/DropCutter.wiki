@@ -58,8 +58,9 @@ papers
  # Yau2004 http://dx.doi.org/10.1080/00207540410001671651 DropCutter for a general APT-style cutter. This includes cutters with pointed ends and tapered cutters. See also the freesteel blog on [http://www.freesteel.co.uk/wpblog/2007/02/one-tapered-tool-diagram-coming-up/ tapered-cutters]
  # Chuang2005 http://dx.doi.org/10.1016/j.cad.2004.10.005  this paper presents a Push-cutter idea for calculating z-level (waterline) paths.
 
-from Anders W's blog:
- # [http://www.anderswallin.net/2007/06/drop-cutter-part-13-cutter-vs-vertex/ Vertex test]
- # [http://www.anderswallin.net/2007/06/drop-cutter-part-23-cutter-vs-facet/ Facet test] including [http://www.anderswallin.net/2007/06/point-in-triangle-test/ point-in-triangle]
- # [http://www.anderswallin.net/2007/07/drop-cutter-33-edge-test/ Edge test]
- # [http://www.anderswallin.net/2007/07/drop-cutter-might-work/ Testing DropCutter]
+Links to blog-posts by Anders W:
+ # vertex test http://www.anderswallin.net/2007/06/drop-cutter-part-13-cutter-vs-vertex/ 
+ # Facet test http://www.anderswallin.net/2007/06/drop-cutter-part-23-cutter-vs-facet/
+ # point in triangle http://www.anderswallin.net/2007/06/point-in-triangle-test/ point-in-triangle
+ # edge test http://www.anderswallin.net/2007/07/drop-cutter-33-edge-test/ 
+ # drop-cutter test http://www.anderswallin.net/2007/07/drop-cutter-might-work/ 
