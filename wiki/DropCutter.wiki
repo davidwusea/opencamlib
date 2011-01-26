@@ -1,6 +1,4 @@
-#summary Drop-cutter algorithm.
-
-Back to [CAM]
+#summary Description of the low-level Drop-cutter algorithm.
 
 Some definitions:
  # C(R,r) is a cutter with shaft radius R and corner radius r
@@ -35,21 +33,10 @@ Chuang2002 lists the following steps for their DropCutter
   ## compute CC point with infinite line. if outside edge, skip to next edge
   ## if inside edge, compute CL point and update ze 
 
-== Bucketing of triangles ==
+== Finding triangles that overlap with the tool ==
 to find the triangles under the tool it probably makes sense to bucket the triangles into a 'checker-board' pattern.
 
 another option described in Yau2004 is to construct a k-d-tree of all the triangles. a search for those triangles that are under the cutter can then be performed rapidly. Yau uses rectangular bounding boxes for both the cutter and each triangle.
-
-= Object Oriented Drop-Cutter =
-
-  * Cutter
-  ** VertexDrop
-  ** EdgeDrop
-  ** FacetDrop
-  * Cutter sub-classes:
-   ** CylindricalCutter
-   ** SphericalCutter
-   ** ToroidalCutter
 
 = DropCutter References =
 papers
