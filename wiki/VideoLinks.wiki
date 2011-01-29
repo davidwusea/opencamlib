@@ -1,4 +1,4 @@
-#summary videos of other cam programs in use.
+#summary videos of cam programs, toolpaths, machining, or geometry/algorithms.
 
 For the UI and for toolpath types we should try to learn as much as possible from other CAM programs. This page should collect links to videos and pictures etc of other CAM programs.
 = opencamlib =
