@@ -1,4 +1,13 @@
 #summary A time-line of ocl development.
+== 2011 January ===
+
+Work with calculating voronoi-diagrams, and their duals Delaunay triangulations.
+
+Voronoi-diagram in Cyan, and Delaunay triangulation in red:
+<wiki:video url="http://www.youtube.com/watch?v=dXyyccLi1X8"/>
+
+Voronoi-diagram for point-generators:
+<wiki:video url="http://www.youtube.com/watch?v=1Ra08OoKWXU"/>
 
 == 2010 November ==
 
