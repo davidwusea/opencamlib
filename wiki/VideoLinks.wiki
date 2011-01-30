@@ -2,6 +2,7 @@
 
 For the UI and for toolpath types we should try to learn as much as possible from other CAM programs. This page should collect links to videos and pictures etc of other CAM programs.
 = opencamlib =
+ * Delaunay triangulation http://www.youtube.com/watch?v=dXyyccLi1X8
  * voronoi diagram for points http://www.youtube.com/watch?v=1Ra08OoKWXU
  * cutting simulator http://www.youtube.com/watch?v=1DAvgLCj_RQ
  * cutting simulator details http://www.youtube.com/watch?v=17mpgQ4KVLg
