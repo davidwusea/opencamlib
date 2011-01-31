@@ -14,19 +14,30 @@ Think of these as drilling tool paths.
  * Line segment offset (a subset of the existing 3D waterline code)
  * Line/Arc segment offset (an exact voronoi-approach is on possibility, an approximate fiber/weave approach is the other)
  * Arc-filter (find arcs with given tolerance from short line segments)
+ * *done* Line-filter
 
 == 2D pocket/clearing algorithms ==
 once we have a pocket or contour (from the offset algorithm) we need to clear(rough) it.
- * zigzag (use a graph-based approach)
+ * zigzag (use a graph-based approach, see paper by Arkin)
  * spiral
- * successive offset
- * adaptive (lot's of ideas to be added later on a separate page AdaptiveRoughing)
+ * successive offset (need voronoi-offset function for this)
+ * adaptive (see separate page AdaptiveRoughing)
 
 = 3D algorithms =
  * Drop-Cutter 
-  ** Cyl, Ball, Bull, Cone cutters work. Composite cutters work. 
+  ** *done* Cyl, Ball, Bull, Cone cutters work. 
+  ** Composite cutters ?? 
  * Push-cutter/Waterline
+  ** most cutters work (Cyl, Ball, Bull)
   ** work needed on ConeCutter
+  ** work needed on CompositeCutter
+ * Cutter Location surfaces
+  ** 2D triangulating an arbitrary pocket
+  ** adaptive refinement of triangulation
+  ** slicing/traversing the mesh to generate toolpaths
+  ** geodesics aka. constant step-over
+  ** classification of areas into steep/shallow
+  ** const-scallop (requires estimating curvature of surface?)
 
 = Cutting simulation =
  * To get better performance, integrate with OpenGL and use VBO-technique for rendering. 
@@ -40,3 +51,5 @@ once we have a pocket or contour (from the offset algorithm) we need to clear(ro
 We are now using OpenMP, but if someone is keen on MPI or OpenCL, then those are interesting directions too!
 
 A set of standard benchmarking tests + timing mechanisms would be useful for measuring improvements in algorithm speed. Compare benchmarks to other libraries (PyCAM etc)
+
+Tests. Unit tests and larger machining tests are needed. Run these periodically to track improvement and discover new/old bugs.
