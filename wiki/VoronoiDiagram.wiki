@@ -64,7 +64,7 @@ T is connected if
 = Generators =
 t is the offset parameter. k=+1 for enlarging circle(offset left of line), k=-1 for shrinking circle(offset right of line).
  * Line: a1 x + b1 y + c1 + k1 t = 0  and  a*a + b*b = 1
- * Circle: (x(t) - xc1)^2 + (y(t)-yc1)^2 = (r1+k1*t)^2
+ * Circle: square(x(t) - xc1) + square(y(t)-yc1) = square(r1+k1*t)
 = Bisectors =
 With point, line, and arc generators all voronoi-edges, aka. bisectors, are quadratic curves: lines(line/line), parabolas(circle/line), arcs, hyperbolas(circle/circle), ellipses(circle/circle).
 From Held's book, a way of representing bisectors:
