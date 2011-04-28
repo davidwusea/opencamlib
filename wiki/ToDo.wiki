@@ -14,6 +14,12 @@ Think of these as drilling tool paths.
 
 = 2D algorithms =
  * Voronoi diagram: Line-segment generators, Arc generators
+  ** Sugihara Iri http://dx.doi.org/10.1109/5.163412
+  ** Sugihara Iri 1994: http://dx.doi.org/10.1142/S0218195994000124
+  ** Topology based approach: http://dx.doi.org/10.1007/3-540-46632-0_36 and http://dx.doi.org/10.1007/s004530010002
+  ** Imai (line generators) http://www.cccg.ca/proceedings/1996/cccg1996_0019.pdf
+  ** Held 2001: http://dx.doi.org/10.1016/S0925-7721(01)00003-7
+  ** Held 2009: http://dx.doi.org/10.1016/j.cad.2008.08.004
  * Arc-filter (find arcs with given tolerance from short line segments)
  * *done* Line-filter
 
@@ -42,16 +48,21 @@ once we have a pocket or contour (from the offset algorithm) we need to clear(ro
   ** const-scallop (requires estimating curvature of surface?)
 
 = Cutting simulation =
+ * Idea: Store stock model in an octree, use isosurface extraction to get and render surface triangles. Cutting moves modify the stock octree.
  * Uses OpenGL VBO for rendering. 
  * Add all the cutter types. 
  * Color triangles based on what cutter is used. 
  * display/log material removal rate (verify that an adaptive pocketing algorithm actually works)
  * fixtures and other no-go areas
  * integrate with a g-code parser (EMC2 ?)
+ * Isosurface extraction: 
+  ** Marching cubes (classic Lorensen Cline paper)
+  ** Extended Marching Cubes (Kobbelt http://portal.acm.org/citation.cfm?id=383265)
+  ** Dual contouring http://portal.acm.org/citation.cfm?id=566586
 
 = Multi-threading + Benchmarking =
-We are now using OpenMP, but if someone is keen on MPI or OpenCL, then those are interesting directions too!
+We are now using OpenMP, but if someone is keen on MPI or OpenCL, then those are interesting directions too.
 
-A set of standard benchmarking tests + timing mechanisms would be useful for measuring improvements in algorithm speed. Compare benchmarks to other libraries (PyCAM etc)
+A set of standard benchmarking tests + timing mechanisms would be useful for measuring improvements in algorithm speed. Compare benchmarks to other libraries (PyCAM, libarea, other 2D offset libraries (clipper?) etc)
 
 Tests. Unit tests and larger machining tests are needed. Run these periodically to track improvement and discover new/old bugs.
