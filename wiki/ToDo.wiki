@@ -1,46 +1,48 @@
 #summary To-Do list for CAM algorithms.
 
 If you're interested in CAM algorithms and would like to help with this project, here is a list of algorithms and ideas that need implementing!
-Please join us on the discussion list to explore what we do and where you can help: http://groups.google.com/group/opencamlib
+Please join us on the discussion list or on IRC to explore what we do and where you can help: http://groups.google.com/group/opencamlib
 
 = 1D algorithms =
 Think of these as drilling tool paths.
- * Travelling salesman problem (TSP) solver. The boost graph-library contains some heuristic solution to this problem.
+ * Travelling salesman problem (TSP) solver, probably based on a Boost Graph Library graph.
+  * 2-TSP BGL code available online 
+  * Christofides http://en.wikipedia.org/wiki/Christofides_algorithm
   * Genetic algorithm based?
   * simulated annealing based?
  * modified TSP: asymmetric graph. This could be used as a general algorithm for optimizing 2D paths. You come into a 'city' at the beginning of a cut and exit the 'city' after the cut (at another point in space). Or maybe you could implement this cutting idea with two cities per cut. As you enter the first city there is a zero-cost edge in the graph which you must travel along.
 
 = 2D algorithms =
- * Line segment offset (a subset of the existing 3D waterline code)
- * Line/Arc segment offset (an exact voronoi-approach is on possibility, an approximate fiber/weave approach is the other)
+ * Voronoi diagram: Line-segment generators, Arc generators
  * Arc-filter (find arcs with given tolerance from short line segments)
  * *done* Line-filter
 
 == 2D pocket/clearing algorithms ==
 once we have a pocket or contour (from the offset algorithm) we need to clear(rough) it.
  * zigzag (use a graph-based approach, see paper by Arkin)
- * spiral
- * successive offset (need voronoi-offset function for this)
+ * spiral (simple circular spiral?)
+ * offset 
  * adaptive (see separate page AdaptiveRoughing)
 
 = 3D algorithms =
  * Drop-Cutter 
   ** *done* Cyl, Ball, Bull, Cone cutters work. 
-  ** Composite cutters ?? 
+  ** Composite cutters. (do they work ok currently?) 
+  ** The triangle-search interface could be made abstract and other search methods explored. We now use a kd-tree, but geometric hashing/binning may be faster.
  * Push-cutter/Waterline
   ** most cutters work (Cyl, Ball, Bull)
   ** work needed on ConeCutter
   ** work needed on CompositeCutter
  * Cutter Location surfaces
-  ** 2D triangulating an arbitrary pocket
-  ** adaptive refinement of triangulation
+  ** 2D triangulating an arbitrary pocket (with islands)
+  ** adaptive refinement of triangulation/mesh
   ** slicing/traversing the mesh to generate toolpaths
-  ** geodesics aka. constant step-over
-  ** classification of areas into steep/shallow
+  ** geodesics aka. constant step-over, see Kobbelt paper http://www-i8.informatik.rwth-aachen.de/uploads/media/bommes_07_VMV_01.pdf
+  ** classification of areas into steep/shallow based on normal direction. Apply a drop-cutter strategy on shallow areas, a waterline approach to steep areas.
   ** const-scallop (requires estimating curvature of surface?)
 
 = Cutting simulation =
- * To get better performance, integrate with OpenGL and use VBO-technique for rendering. 
+ * Uses OpenGL VBO for rendering. 
  * Add all the cutter types. 
  * Color triangles based on what cutter is used. 
  * display/log material removal rate (verify that an adaptive pocketing algorithm actually works)
