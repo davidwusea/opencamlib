@@ -10,6 +10,8 @@ When only the DOI of a paper is give you can reach it through http://dx.doi.org
 
 This is a list of books related to computational geometry and CAM. Please add your description or comments for each book to this page!
 
+= Websites =
+ * http://www.personal.kent.edu/~rmuhamma/Compgeometry/compgeom.html 
 = Books. =
  * O'Rourke: Computational Geometry in C
  * deBerg: Computational geometry, algorithms and applications
