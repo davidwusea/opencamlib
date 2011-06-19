@@ -13,6 +13,7 @@ This is a list of books related to computational geometry and CAM. Please add yo
 = Websites =
  * http://www.personal.kent.edu/~rmuhamma/Compgeometry/compgeom.html 
 = Books. =
+ * Okabe, Boots, Sugihara: "Spatial Tessellations - concepts and applications of voronoi diagrams", Wiley series in probability and statistics. 
  * O'Rourke: Computational Geometry in C
  * deBerg: Computational geometry, algorithms and applications
  * Farin: [http://www.farinhansford.com/books/cagd/ Curves and Surfaces for CAGD]
